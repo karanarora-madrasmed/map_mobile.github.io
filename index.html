@@ -4,9 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta author = "karan arora">
-    <meta website = "massivefile.com" made-by = "Karan Arora">
-    
+     
     <title>COVID Map</title>
     <style>
       body {
@@ -43,14 +41,7 @@
         height: 670px;
         width: 100%;
       }
-      .india {
-        text-align: center;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        font-size: 15px;
-        color: black;
-        margin-bottom: 0px;
-      }
+      
       .state-name {
         text-align: center;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -63,23 +54,22 @@
   </head>
   <body>
     <div class="container">
-      <div class="india"> <b>COVID Statstics India (LIVE)</b></div>
       <div class="state-name">...</div>
       <div class="data">
         <div class="active">
-          <div class="caseActive">Active</div>
+          <div class="caseActive">Population</div>
           <div class="caseFigActive">...</div>
         </div>
         <div class="confirmed">
-          <div class="caseConfirmed">Confirmed</div>
+          <div class="caseConfirmed">Area</div>
           <div class="caseFigConfirmed">...</div>
         </div>
         <div class="recod">
-          <div class="caseRecod">Recovered</div>
+          <div class="caseRecod">Immunisation Rates</div>
           <div class="caseFigRecod">...</div>
         </div>
         <div class="died">
-          <div class="caseDied">Died</div>
+          <div class="caseDied">Health Care Infra</div>
           <div class="caseFigDied">...</div>
         </div>
       </div>
@@ -410,9 +400,10 @@
       </div>
     </div>
     <script>
+      showMapData("Total");
       function showMapData(stateName) {
         console.log(stateName);
-        fetch("https://api.covid19india.org/data.json")
+        fetch("https://api.jsonbin.io/b/5fc623fb045eb86f1f898758")
           .then((e) => {
             return e.json();
           })
@@ -421,13 +412,13 @@
               if (data.statewise[i].state == stateName) {
                 document.querySelector(".state-name").innerHTML = stateName;
                 document.querySelector(".caseFigActive").innerHTML =
-                  data.statewise[i].active;
+                  data.statewise[i].population;
                 document.querySelector(".caseFigConfirmed").innerHTML =
-                  data.statewise[i].confirmed;
+                  data.statewise[i].size;
                 document.querySelector(".caseFigRecod").innerHTML =
-                  data.statewise[i].recovered;
+                  data.statewise[i].immunisation;
                 document.querySelector(".caseFigDied").innerHTML =
-                  data.statewise[i].deaths;
+                  data.statewise[i].healthcenters;
               }
             }
           });
