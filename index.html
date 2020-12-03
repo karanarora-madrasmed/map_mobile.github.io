@@ -17,6 +17,14 @@
         overflow-y: auto;
         font-family: Raleway !important;
       }
+      #IN-TN{
+        stroke: blue;
+        stroke-width: 4;
+      }
+      #IN-KL{
+        stroke: green;
+        stroke-width: 4;
+      }
       .data {
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
@@ -47,7 +55,10 @@
         width: 100%;
       }
 
-      
+      #IN-TN{
+        stroke: blue;
+        stroke-width: 4;
+      }
       .state-name {
         text-align: center;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -92,9 +103,9 @@
           viewBox="0 0 615 950"
         >
           <defs>
-            <style type="text/css">
+             <style type="text/css">
               .land {
-                fill: #cccccc21;
+                fill: #fafafa;
                 fill-opacity: 1;
                 stroke: #777;
                 stroke-opacity: 1;
@@ -252,7 +263,7 @@
             />
             <path
               id="IN-KL"
-              onmouseout="document.querySelector('#IN-KL').style.strokeWidth='2';document.querySelector('#IN-KL').style.stroke='#777';"
+              onmouseout="document.querySelector('#IN-KL').style.strokeWidth='2';document.querySelector('#IN-KL').style.stroke='green';"
               onmouseover="document.querySelector('#IN-KL').style.stroke='tomato';document.querySelector('#IN-KL').style.strokeWidth='4';showMapData('Kerala')"
               title="Kerala"
               class="land"
@@ -348,7 +359,7 @@
             />
             <path
               id="IN-TN"
-              onmouseout="document.querySelector('#IN-TN').style.strokeWidth='2';document.querySelector('#IN-TN').style.stroke='#777';"
+              onmouseout="document.querySelector('#IN-TN').style.strokeWidth='2';document.querySelector('#IN-TN').style.stroke='blue';"
               onmouseover="document.querySelector('#IN-TN').style.stroke='tomato';document.querySelector('#IN-TN').style.strokeWidth='4';showMapData('Tamil Nadu')"
               title="Tamil Nadu"
               class="land"
